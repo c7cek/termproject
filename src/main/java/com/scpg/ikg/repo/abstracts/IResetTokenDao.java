@@ -1,0 +1,10 @@
+package com.scpg.ikg.repo.abstracts;
+
+import com.scpg.ikg.core.entities.PasswordResetToken;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IResetTokenDao extends JpaRepository<PasswordResetToken, Integer> {
+    boolean existsByToken(String token);
+
+    PasswordResetToken getByToken(String token);
+}
